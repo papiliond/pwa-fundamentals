@@ -1,9 +1,5 @@
 {
-    "plugins": [
-        "react-hot-loader/babel"
-    ],
-    "presets": [
-        "env",
-        "react"
-    ]
-}
+    "presets": ["@babel/preset-react", "@babel/preset-env"],
+    "plugins": ["@babel/plugin-transform-react-jsx"]
+  }
+  
