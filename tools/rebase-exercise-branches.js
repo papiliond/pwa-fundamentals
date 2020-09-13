@@ -68,7 +68,7 @@ function forcePush() {
   console.log('schedule FORCEPUSH ');
   return new Promise((resolve, reject) => {
     console.log('begin FORCEPUSH ');
-    exec(`git push --force`, (err, stdout, stderr) => {
+    exec('git push --force', (err, stdout, stderr) => {
       console.log('complete FORCEPUSH');
       resolve();
     });

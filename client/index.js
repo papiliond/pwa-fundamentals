@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
+// eslint-disable-next-line no-unused-vars
 import VAPID from './../private/vapid.json';
 
 import 'file-loader?name=./img/launcher-icon-1x.png!./img/launcher-icon-1x.png';

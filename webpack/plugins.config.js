@@ -10,9 +10,12 @@ var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlug
 const extractSass = require('./extract-sass');
 const html = require('./html.config');
 
+const modeDependentPlugins = process.env.NODE_ENV === 'development' ? [] : [
+  extractSass
+]
 
 module.exports = function (env, options) {
-  let plugins = [extractSass,
+  let plugins = [...modeDependentPlugins,
     new HtmlWebpackPlugin(html),
     new ManifestPlugin({
       fileName: 'asset-manifest.json',

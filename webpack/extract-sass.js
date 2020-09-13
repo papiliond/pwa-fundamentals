@@ -1,7 +1,7 @@
 /* eslint-env node */
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = new ExtractTextPlugin({
+module.exports = new MiniCssExtractPlugin({
   filename: '[name]-[contenthash].css',
-  disable: process.env.NODE_ENV === 'development'
+  // disable: process.env.NODE_ENV === "development",
 });

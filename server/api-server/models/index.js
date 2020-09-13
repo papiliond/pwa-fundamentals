@@ -1,9 +1,8 @@
 let fs = require('fs');
 let path = require('path');
-let Sequelize = require('sequelize');
+const { Sequelize, DataTypes }= require('sequelize');
 
 module.exports = function (sequelize) {
-
   let db = {};
 
   let modelFiles = fs.readdirSync(__dirname)
@@ -12,7 +11,7 @@ module.exports = function (sequelize) {
     });
 
   modelFiles.forEach((file) => {
-    let model = sequelize.import(path.join(__dirname, file));
+    let model = require(path.join(__dirname, file))(sequelize, DataTypes);
     db[model.name] = model;
   });
 
